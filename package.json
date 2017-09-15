@@ -1,0 +1,45 @@
+{
+  "name": "blocks-webar",
+  "version": "0.0.1",
+  "description": "blocks-webar",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "dependencies": {
+    "babel-polyfill": "6.23.0",
+    "eventemitter3": "2.0.3",
+    "glsl-aastep": "^1.0.1",
+    "ismobilejs": "0.4.1",
+    "load-bmfont": "^1.2.3",
+    "lodash.defaults": "^4.2.0",
+    "three-bmfont-text": "^2.2.0",
+    "three-buffer-vertex-data": "^1.0.0",
+    "@tweenjs/tween.js": "17.1.0",
+    "urlparam": "^1.0.2",
+    "webvr-polyfill": "0.9.36",
+    "webvr-ui": "0.10.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "6.24.1",
+    "babelify": "7.3.0",
+    "browserify": "14.4.0",
+    "budo": "10.0.4",
+    "glslify": "6.1.0",
+    "uglify-js": "3.0.1"
+  },
+  "scripts": {
+    "start": "budo --open index.js:js/index.js --dir app -t babelify -t glslify",
+    "build": "browserify index.js -t babelify -t glslify | uglifyjs -cm > app/js/index.js"
+  },
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  },
+  "authors": [
+    "Arturo Paracuellos <arturo@unboring.net>"
+  ],
+  "license": "MIT"
+}
